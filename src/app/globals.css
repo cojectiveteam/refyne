@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: #0169FF;
+  --color-secondary: #1E1E1E;
+  --color-accent: #EFF6FF;
+  --color-text-light: #FCFCFC;
+  --color-text-dark: #5A5A5A;
+  --background-image-background: linear-gradient(180deg, #0068FF 0.93%, #0068FF 0.98%, #227CFF 52.4%, #3286FF 59.77%, #FFFFFF 100%);
+  --background-image-background2: linear-gradient(180deg, #0068FF 0.93%, #0068FF 0.98%, #227CFF 61.59%, #3286FF 72.18%, #4692FF 76.37%, #FFFFFF 100%);
+  --background-image-button: linear-gradient(180deg, #474747 0%, #131313 100%);
+  --background-image-neon: linear-gradient(180deg, #FF6701 0%, #FF9D00 25%, #FF7600 50%, #FF3C00 100%);
+
+
+  --font-sans: var(--font-plus-jakarta-sans);
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply font-sans bg-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-tight;
+  }
+
+  p {
+    @apply text-base leading-normal;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {}
+
+@utility max-container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Padding Utilities */
+@utility fpt {
+  padding-top: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+}
+
+@utility fpb {
+  padding-bottom: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+}
+
+@utility fpy {
+  padding-top: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+  padding-bottom: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+}
+
+@utility fpr {
+  padding-right: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+}
+
+@utility fpl {
+  padding-left: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+}
+
+@utility fpx {
+  padding-left: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+  padding-right: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+}
+
+@utility fp {
+  padding-top: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+  padding-bottom: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
+  padding-left: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+  padding-right: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
+}
+
+@utility grid-lines {
+  background-image: linear-gradient(to right, #D9D9D9 1px, transparent 1px),
+    linear-gradient(to bottom, #D9D9D9 1px, transparent 1px);
+  background-size: 50px 50px;
+
+  /* Create a circle mask that follows the variables */
+  mask-image: radial-gradient(circle 250px at var(--x, 0%) var(--y, 0%),
+      black 0%,
+      transparent 100%);
+
+  /* Hide by default, show on JS hover */
+  opacity: var(--opacity, 0);
+  transition: opacity 0.3s ease;
 }
