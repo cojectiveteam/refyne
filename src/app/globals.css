@@ -16,6 +16,15 @@
 
   --font-sans: var(--font-plus-jakarta-sans);
 
+  /* Mobile Small (320px) */
+  --breakpoint-msm: 20rem;
+  /* Mobile Medium (375px) */
+  --breakpoint-mmd: 23.4375rem;
+  /* Mobile Large (425px) */
+  --breakpoint-mlg: 26.5625rem;
+  /* Laptop large (1440px) */
+  --breakpoint-2xl: 90rem;
+
 }
 
 @layer base {
@@ -33,7 +42,7 @@
   }
 
   p {
-    @apply text-base leading-normal;
+    @apply f-base leading-normal;
   }
 
   button {
@@ -52,8 +61,48 @@
 @utility max-container {
   max-width: 1440px;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  /* padding-inline: 1.5rem; */
 }
+
+@utility f-h1 {
+  font-size: clamp(1.759rem, 1.119rem + 3.201vw, 4rem);
+  /* font-size: clamp(1.956rem, 1.372rem + 2.92vw, 4rem); */
+}
+
+@utility f-h2 {
+  font-size: clamp(1.525rem, 1.068rem + 2.286vw, 3.125rem);
+  /* font-size: clamp(1.494rem, 1.028rem + 2.33vw, 3.125rem); */
+}
+
+@utility f-h3 {
+  font-size: clamp(1.331rem, 1.068rem + 1.313vw, 2.25rem);
+  /* font-size: clamp(1.25rem, 0.964rem + 1.429vw, 2.25rem); */
+}
+
+@utility f-h4 {
+  font-size: clamp(1.157rem, 1.113rem + 0.222vw, 1.313rem);
+}
+
+@utility f-h5 {
+  font-size: clamp(1.006rem, 0.865rem + 0.705vw, 1.5rem);
+}
+
+@utility f-base {
+  font-size: clamp(0.875rem, 0.839rem + 0.179vw, 1rem);
+}
+
+@utility f-sm {
+  font-size: clamp(0.744rem, 0.713rem + 0.152vw, 0.85rem);
+}
+
+@utility f-xs {
+  font-size: clamp(0.632rem, 0.606rem + 0.129vw, 0.723rem);
+}
+
+@utility unbound {
+  font-size: clamp(1.494rem, 0.135rem + 6.795vw, 6.25rem)
+}
+
 
 /* Padding Utilities */
 @utility fpt {
@@ -102,4 +151,34 @@
   /* Hide by default, show on JS hover */
   opacity: var(--opacity, 0);
   transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-lines {
+    background-size: 30px 30px;
+
+    /* Create a circle mask that follows the variables */
+    mask-image: radial-gradient(circle 125px at var(--x, 0%) var(--y, 0%),
+        black 0%,
+        transparent 100%);
+
+    /* Hide by default, show on JS hover */
+    opacity: var(--opacity, 0);
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .grid-lines {
+    background-size: 40px 40px;
+
+    /* Create a circle mask that follows the variables */
+    mask-image: radial-gradient(circle 200px at var(--x, 0%) var(--y, 0%),
+        black 0%,
+        transparent 100%);
+
+    /* Hide by default, show on JS hover */
+    opacity: var(--opacity, 0);
+    transition: opacity 0.3s ease;
+  }
 }

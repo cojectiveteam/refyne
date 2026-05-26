@@ -18,7 +18,7 @@ interface ButtonProps {
 
 export default function PrimaryButton({ icon, iconPosition = "before", iconColor, buttonText, backgroundColor = "bg-button", textColor = "text-white", className = "", href }: ButtonProps) {
     return (
-        <Link href={href || "#"} className={`flex justify-center gap-3 items-center px-7 py-5 rounded-full  transition-colors duration-300  leading-none z-1 ${backgroundColor} ${textColor} ${className}`}>
+        <Link href={href || "#"} className={`flex justify-center gap-3 items-center px-7 py-4 lg:py-5 f-base rounded-full  transition-colors duration-300  leading-none z-1 ${backgroundColor} ${textColor} ${className}`}>
             {icon && iconPosition === "before" && (
 
                 <Icon name={icon} className={`shrink-0 ${iconColor || 'text-current'}`} width={17} height={14} />

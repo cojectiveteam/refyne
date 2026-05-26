@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function AboutMe() {
     return (
         <section className="bg-primary">
-            <div className="flex gap-20 fp max-container">
-                <div className="w-[35%] flex items-center justify-center">
+            <div className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-15 xl:gap-20 fp max-container">
+                <div className="w-full lg:w-[35%] flex items-center justify-center">
                     <Image src="/images/home/founder.webp" alt="" width={412} height={412} />
                 </div>
-                <div className="w-[65%] flex flex-col gap-10 text-text-light">
+                <div className="w-full lg:w-[65%] flex flex-col gap-5  2xl:gap-10 text-text-light">
                     <div className="flex flex-col gap-5">
                         <Pill text="About Me" bg="bg-white" color="text-primary" />
-                        <h2 className="text-[50px] font-bold">Three decades of service,now in your corner</h2>
+                        <h2 className="f-h3 2xl:f-h2 font-bold">Three decades of service,now in your corner</h2>
                     </div>
                     <div className="flex flex-col gap-5">
                         <p>Former Senior Government Officer with over 30 years of experience in administration, finance, compliance and people management.</p>

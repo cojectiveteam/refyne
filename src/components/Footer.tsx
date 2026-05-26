@@ -9,7 +9,7 @@ const footerLinks = [
 export default function Footer() {
     return (
         <footer className="bg-primary text-white">
-            <div className="flex justify-between fpx py-10 max-container">
+            <div className="flex flex-col gap-2 lg:gap-0 lg:flex-row lg:justify-between items-center fpx py-5 sm:py-8 lg:py-10 f-xs mlg:f-sm sm:f-base max-container">
                 <span>© 2025 Amitabh Kaushik Consultancy | Jaipur, India</span>
                 <nav className="flex gap-3">
                     {footerLinks.map((link, index) => (
