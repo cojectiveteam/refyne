@@ -6,6 +6,8 @@ import Scale from "@/components/about/Scale";
 import Compliance from "@/components/about/Compliance";
 import Testimonials from "@/components/about/Testimonials";
 import Associate from "@/components/about/Associate";
+import RefyneOffers from "@/components/about/RefyneOffers";
+import Earnings from "@/components/about/Earnings";
 
 
 export default function AboutUs() {
@@ -14,11 +16,12 @@ export default function AboutUs() {
             <Support />
             <PublicService />
             <Refyne />
-            <Offer />
+            <RefyneOffers />
             <Scale />
             <Compliance />
             <Testimonials />
             <Associate />
+            <Earnings />
         </main>
     );
 }

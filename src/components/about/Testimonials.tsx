@@ -47,21 +47,29 @@ const testimonial = [
     }
 ]
 
+const arrows = [
+    {
+        icon: "arrow-right-boxed",
+        class: "testimonial-prev -scale-x-100"
+    },
+    {
+        icon: "arrow-right-boxed",
+        class: "testimonial-next"
+    }
+] as const;
+
 export default function Testimonials() {
     return (
         <section className="bg-primary">
-            <div className="flex flex-col gap-15 fp text-text-light max-container overflow-visible">
-                {/* First Row */}
-                <div className="flex justify-between items-end">
-                    <h2 className="text-[50px] font-bold max-w-[50%] leading-tight">Trusted by Millions of Employees Across India</h2>
-                    <div className="flex gap-6">
-                        <Icon name='arrow-right-boxed' width={60} height={60} className="testimonial-prev -scale-x-100 text-text-light/50 cursor-pointer hover:text-text-light transition-colors" />
-                        <Icon name='arrow-right-boxed' width={60} height={60} className="testimonial-next cursor-pointer text-text-light/50 hover:text-text-light transition-colors" />
-                    </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-15 fpy fpl lg:fpr text-text-light max-container overflow-visible">
+                <h2 className="f-h3 2xl:f-h2 font-bold w-full  leading-tight order-1">Trusted by Millions of Employees Across India</h2>
+                <div className="w-full flex justify-center items-center sm:justify-end sm:items-end gap-10 sm:gap-8 sm:fpr lg:pr-0 order-3 sm:order-2">
+                    {arrows.map((arrow, index) => (
+                        <Icon key={index} name={arrow.icon} width={60} height={60} className={`w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] 2xl:w-[60px] 2xl:h-[60px] text-text-light/50 cursor-pointer hover:text-text-light transition-colors ${arrow.class}`} />
+                    ))}
                 </div>
-                {/* End of First Row */}
 
-                <div className="w-full relative">
+                <div className="w-full relative sm:col-span-2 order-2 sm:order-3">
                     <Swiper
                         modules={[Navigation, Autoplay]}
                         navigation={{
@@ -73,31 +81,31 @@ export default function Testimonials() {
                             disableOnInteraction: false,
                         }}
 
-                        slidesPerView={2}
-                        spaceBetween={30}
+                        slidesPerView={1.15}
+                        spaceBetween={20}
                         loop={true}
 
                         breakpoints={{
-                            320: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 2 },
+                            640: { slidesPerView: 1.2, spaceBetween: 30 },
+                            768: { slidesPerView: 1.2, spaceBetween: 30 },
+                            1024: { slidesPerView: 2, spaceBetween: 30 },
                         }}
 
-                        className="w-full h-[350px] [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:h-full "
+                        className="w-full  h-[350px] lg:h-[400px] xl:h-[350px] [&_.swiper-wrapper]:items-stretch [&_.swiper-slide]:h-full "
                     >
                         {testimonial.map((item, index) => (
                             <SwiperSlide key={index} className="h-auto! grid place-content-end">
                                 {({ isActive }) => (
-                                    <div className={`w-full ${isActive ? 'h-full' : 'h-[80%]'} ${isActive ? '' : 'blur-xs'} bg-accent/20 flex flex-col gap-15 justify-between p-8 rounded-lg overflow-hidden transition-all duration-500 ease-in-out`}>
-                                        <div className={`flex ${isActive ? 'gap-20' : 'gap-10'} items-start`}>
-                                            <Image src={item.image} alt="" width={80} height={80} className={`shrink-0 aspect-square ${isActive ? 'w-[80px] h-[80px] opacity-100 ' : 'w-[60px] h-[60px] opacity-50'} transition-[width,height,opacity] duration-500 ease-in-out`} />
-                                            <p className={`${isActive ? 'text-base' : 'text-sm'}`}>{item.quote}</p>
+                                    <div className={`w-full ${isActive ? 'h-full' : 'h-[80%]'} ${isActive ? '' : 'blur-xs'} bg-accent/20 flex flex-col gap-5 lg:gap-15 justify-between p-6 lg:p-8 rounded-lg overflow-hidden transition-all duration-500 ease-in-out`}>
+                                        <div className={`flex flex-col lg:flex-row ${isActive ? 'gap-5 lg:gap-20' : 'gap-2 lg:gap-10'} items-start`}>
+                                            <Image src={item.image} alt="" width={80} height={80} className={`shrink-0 aspect-square ${isActive ? 'w-[60px] h-[60px] md:w-[70px] md:h-[70px] lg:w-[80px] lg:h-[80px] opacity-100 ' : 'w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] opacity-50'} transition-[width,height,opacity] duration-500 ease-in-out`} />
+                                            <p className={`${isActive ? 'f-sm mlg:f-base' : 'f-xs md:f-sm'}`}>{item.quote}</p>
                                         </div>
                                         <div className="flex justify-between">
                                             <p>0{index + 1}/0{testimonial.length}</p>
                                             <div className="flex flex-col gap-1 text-right">
-                                                <h5 className="text-[20px] md:text-[24px] font-medium">-{item.name}</h5>
-                                                <div className="text-xs md:text-sm text-text-light/60">{item.state}</div>
+                                                <h5 className="f-h5 font-medium">-{item.name}</h5>
+                                                <div className="f-xs text-text-light/60">{item.state}</div>
                                             </div>
                                         </div>
 
