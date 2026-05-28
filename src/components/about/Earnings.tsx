@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Earnings() {
     return (
         <section>
-            <div className="fp max-container pt-20 lg:pt-30 2xl:pt-40 lg:pb-10">
+            <div className="fp max-container pt-20 lg:pt-30 2xl:pt-40 lg:pb-10 overflow-hidden">
                 <div className="relative bg-primary rounded-2xl">
                     {/* Background Layer: Overflow Hidden to clip the glow to the card corners */}
                     <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none z-0">

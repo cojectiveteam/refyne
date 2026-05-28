@@ -40,7 +40,7 @@ const certifications = [
 
 export default function Compliance() {
     return (
-        <section className="relative bg-text-light">
+        <section className="relative bg-text-light overflow-hidden">
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 fp max-container">
                 <div className="flex flex-col gap-5 xl:gap-0 justify-between">
                     <h2 className="f-h3 xl:f-h2 text-secondary font-bold">Why Compliance Matters </h2>

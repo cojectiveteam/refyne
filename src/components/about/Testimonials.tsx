@@ -60,7 +60,7 @@ const arrows = [
 
 export default function Testimonials() {
     return (
-        <section className="bg-primary">
+        <section className="bg-primary overflow-hidden">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-15 fpy fpl lg:fpr text-text-light max-container overflow-visible">
                 <h2 className="f-h3 2xl:f-h2 font-bold w-full  leading-tight order-1">Trusted by Millions of Employees Across India</h2>
                 <div className="w-full flex justify-center items-center sm:justify-end sm:items-end gap-10 sm:gap-8 sm:fpr lg:pr-0 order-3 sm:order-2">

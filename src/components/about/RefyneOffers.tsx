@@ -3,7 +3,7 @@ import Orbit from "../ui/Orbit";
 
 export default function RefyneOffers() {
     return (
-        <section className="bg-text-light">
+        <section className="bg-text-light overflow-hidden">
             <div className="flex flex-col gap-8 lg:gap-18 fpx fpt max-container">
                 <div className="flex flex-col gap-5 items-center text-center">
                     <h2 className="f-h3 2xl:f-h2 text-secondary font-bold">What Refyne Offers</h2>

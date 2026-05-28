@@ -19,7 +19,7 @@ const data = [
 
 export default function PublicService() {
     return (
-        <section>
+        <section className="overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-5 sm:gap-10 fp max-container">
                 <div className="w-full lg:w-1/2 2xl:w-[60%] flex flex-col gap-5 lg:gap-8 xl:gap-12">
                     <h2 className="f-h4 md:f-h3 font-semibold">Over 3 decades in public service taught me one thing clearly.</h2>
