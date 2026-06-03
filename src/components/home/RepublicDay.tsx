@@ -12,7 +12,7 @@ export default function RepublicDay() {
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-auto relative border-7 border-text-light rounded-2xl overflow-hidden">
-                    <Image src="/images/home/meeting.webp" alt="" fill className="object-cover" />
+                    <Image src="/images/home/republic-day.webp" alt="" fill className="object-cover" />
                 </div>
             </div>
         </section>

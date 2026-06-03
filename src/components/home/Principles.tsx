@@ -49,7 +49,7 @@ export default function Principles() {
                                     {/* <div className="w-[50px] h-[50px] flex justify-center items-center bg-button rounded-full">
                                         <Image src={principle.icon} alt={`${principle.title}`} width={28.39} height={31.51} />
                                     </div> */}
-                                    <Image src={principle.icon} alt={`${principle.title}`} width={50} height={50} className="w-[18%] mmd:w-[16%] mlg:w-[14%] h-auto 2xl:w-[50px] 2xl:w-[50px]" />
+                                    <Image src={principle.icon} alt={`${principle.title}`} width={50} height={50} className="w-[18%] mmd:w-[16%] mlg:w-[14%] h-auto 2xl:w-[50px] 2xl:h-[50px]" />
                                     <h3 className="f-h5 font-semibold bg-button text-transparent bg-clip-text">{principle.title}</h3>
                                 </div>
                                 <p className="f-sm mlg:f-base text-text-dark">{principle.description}</p>

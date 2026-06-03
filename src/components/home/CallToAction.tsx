@@ -31,7 +31,7 @@ export default function CallToAction() {
                             </div>
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start  gap-4">
                                 <PrimaryButton buttonText="Consult With Me" icon="arrow-right" iconPosition="after" />
-                                <SecondaryButton buttonText="Learn About Refyne" borderColor="border-text-light" textColor="text-text-light" />
+                                <SecondaryButton href="/about-us" buttonText="Learn About Refyne" borderColor="border-text-light" textColor="text-text-light" />
                             </div>
                         </div>
                     </div>

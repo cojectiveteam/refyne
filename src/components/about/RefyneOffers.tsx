@@ -1,15 +1,53 @@
+'use client'
 import Image from "next/image";
 import Orbit from "../ui/Orbit";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function RefyneOffers() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const onDemandRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: onDemandRef.current,
+                start: "top 50%",
+                end: "bottom",
+                toggleActions: "play none none reverse",
+
+            }
+        });
+        tl.from(
+            ".on-demand-image",
+            {
+                yPercent: 100,
+                opacity: 0,
+                stagger: {
+                    each: 0.2,
+                    from: "center"
+                },
+                duration: 1,
+                ease: "power2.out"
+            },
+
+        );
+
+
+
+    }, { scope: sectionRef });
     return (
-        <section className="bg-text-light overflow-hidden">
+        <section ref={sectionRef} className="bg-text-light overflow-hidden" >
             <div className="flex flex-col gap-8 lg:gap-18 fpx fpt max-container">
                 <div className="flex flex-col gap-5 items-center text-center">
                     <h2 className="f-h3 2xl:f-h2 text-secondary font-bold">What Refyne Offers</h2>
                     <p className="text-text-dark">Refyne is the one-stop destination for all your financial needs.</p>
                 </div>
-                <div className="relative flex flex-col gap-5 sm:gap-10 xl:gap-15 2xl:gap-20 px-5 pt-5 lg:px-10 lg:pt-10 bg-primary rounded-t-4xl">
+                <div ref={onDemandRef} className="relative flex flex-col gap-5 sm:gap-10 xl:gap-15 2xl:gap-20 px-5 pt-5 lg:px-10 lg:pt-10 bg-primary rounded-t-4xl overflow-hidden">
                     <Orbit size={{ default: 250, sm: 350, md: 400, lg: 500, xl: 600 }} className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/5" />
                     <Image src="/images/cloud.webp" alt="" width={937} height={434} className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/2 opacity-50 z-0" />
                     <Image src="/images/cloud.webp" alt="" width={937} height={434} className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/2 opacity-50 z-0" />
@@ -18,9 +56,9 @@ export default function RefyneOffers() {
                         <p className="text-accent w-full lg:max-w-3xl">Access a portion of your earned salary anytime before payday instead of taking a loan or paying interest. It gives you flexibility when you need it most, without creating a future financial burden.</p>
                     </div>
                     <div className="w-full h-full flex justify-center items-end gap-2 md:gap-4 lg:gap-6 xl:gap-10 z-1 ">
-                        <Image src="/images/about/offers-1.webp" alt="" width={260} height={320} className="w-[30%] h-auto 2xl:w-[260px] 2xl:h-[320px]" />
-                        <Image src="/images/about/offers-2.webp" alt="" width={293} height={377} className="w-[32%] h-auto 2xl:w-[293px] 2xl:h-[377px]" />
-                        <Image src="/images/about/offers-3.webp" alt="" width={222} height={310} className="w-[27%] h-auto 2xl:w-[222px] 2xl:h-[310px]" />
+                        <Image src="/images/about/offers-1.webp" alt="" width={260} height={320} className="on-demand-image | w-[30%] h-auto 2xl:w-[260px] 2xl:h-[320px]" />
+                        <Image src="/images/about/offers-2.webp" alt="" width={293} height={377} className="on-demand-image | w-[32%] h-auto 2xl:w-[293px] 2xl:h-[377px]" />
+                        <Image src="/images/about/offers-3.webp" alt="" width={222} height={310} className="on-demand-image | w-[27%] h-auto 2xl:w-[222px] 2xl:h-[310px]" />
                     </div>
                 </div>
 

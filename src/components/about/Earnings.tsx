@@ -30,7 +30,7 @@ export default function Earnings() {
                             </div>
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start  gap-4">
                                 <PrimaryButton buttonText="Consult With Me" icon="arrow-right" iconPosition="after" />
-                                <SecondaryButton buttonText="Learn About Refyne" borderColor="border-text-light" textColor="text-text-light" />
+                                <SecondaryButton href="/about-us" buttonText="Learn About Refyne" borderColor="border-text-light" textColor="text-text-light" />
                             </div>
                         </div>
                         <div className="w-full h-30 mmd:h-45 mlg:h-55 sm:h-35 md:h-50 lg:h-auto lg:w-[45%] xl:w-1/2 relative  flex justify-center ">

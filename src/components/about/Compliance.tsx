@@ -1,4 +1,13 @@
+"use client"
 import Icon from "../ui/IconSprite";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const cards = [
     {
@@ -39,8 +48,29 @@ const certifications = [
 ]
 
 export default function Compliance() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        gsap.from(".compliance-card", {
+            y: -400,
+            rotation: (index) => index % 2 === 0 ? -45 : 45,
+            opacity: 0,
+            duration: 1.4,
+            stagger: {
+                each: 0.35,
+                from: "end"
+            },
+            ease: "bounce.out",
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 50%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    }, { scope: sectionRef });
+
     return (
-        <section className="relative bg-text-light overflow-hidden">
+        <section ref={sectionRef} className="relative bg-text-light overflow-hidden">
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 fp max-container">
                 <div className="flex flex-col gap-5 xl:gap-0 justify-between">
                     <h2 className="f-h3 xl:f-h2 text-secondary font-bold">Why Compliance Matters </h2>
@@ -50,9 +80,9 @@ export default function Compliance() {
                     </div>
                 </div>
                 <div className="p-5 mmd:p-6 mlg:p-8 bg-primary rounded-4xl w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-full sm:justify-self-center  ">
-                    <div className="w-full h-full flex flex-col justify-center gap-6 mlg:gap-8 sm:gap-9 md:gap-8 p-4 mmd:p-5 mlg:p-7 bg-text-light rounded-2xl">
+                    <div className="w-full h-full flex flex-col justify-center gap-6 mlg:gap-8 sm:gap-9 md:gap-8 p-4 mmd:p-5 mlg:p-7 bg-text-light rounded-2xl overflow-hidden">
                         {cards.map((card, index) => (
-                            <div key={index} className={`flex justify-between items-center p-3 mmd:p-4 mlg:p-5  ${card.cardClassName} rounded-xl`}>
+                            <div key={index} className={`compliance-card flex justify-between items-center p-3 mmd:p-4 mlg:p-5  ${card.cardClassName} rounded-xl`}>
                                 <Icon name="check-mark-rounded" className={`w-4 h-4 mmd:w-5 mmd:h-5 sm:w-6 sm:h-6 xl:w-5 xl:h-5 ${card.iconClassName}`} />
                                 <p className={`f-sm mmd:f-base sm:f-h5 xl:f-sm 2xl:f-base font-bold ${card.titleClassName}`}>{card.title}</p>
                                 <div className={`w-2 h-2 ${card.dotClassName} rounded-full shrink-0`}></div>

@@ -4,6 +4,9 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SpriteInjector } from "@/components/ui/IconSprite";
+import SmoothScrolling from "@/components/SmoothScrolling";
+import { PopupProvider } from "@/app/context/PopupContext";
+import PopupForm from "@/components/PopupForm";
 
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -31,9 +34,14 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <SpriteInjector />
-        <Header />
-        {children}
-        <Footer />
+        <SmoothScrolling>
+          <PopupProvider>
+            <Header />
+            {children}
+            <Footer />
+            <PopupForm />
+          </PopupProvider>
+        </SmoothScrolling>
       </body>
     </html>
   );

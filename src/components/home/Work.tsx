@@ -9,6 +9,24 @@ const work = [
     "Track outcomes and effectiveness"
 
 ]
+
+const images = [
+    {
+        src: "/images/home/organizations-1.webp",
+        alt: "organizations-1",
+        className: "w-full h-[230px] sm:h-[280px] xl:h-auto col-span-2",
+    },
+    {
+        src: "/images/home/organizations-2.webp",
+        alt: "organizations-2",
+        className: "w-full h-[120px] sm:h-[160px] lg:h-[180px] ",
+    },
+    {
+        src: "/images/home/organizations-3.webp",
+        alt: "organizations-3",
+        className: "w-full h-[120px] sm:h-[160px] lg:h-[180px]",
+    },
+]
 export default function Work() {
     return (
         <section>
@@ -29,14 +47,19 @@ export default function Work() {
                     <p className="text-text-dark">My role is to ensure financial systems are useful, responsible and well understood.</p>
                 </div>
                 <div className="w-full  xl:w-1/2 grid grid-cols-2 xl:grid-rows-[1fr_auto] gap-5">
-                    <div className="w-full h-[230px] sm:h-[280px] xl:h-auto  relative rounded-2xl overflow-hidden col-span-2">
-                        <Image src="/images/home/meeting.webp" fill alt="meeting" className="object-cover" />
+                    {images.map((image, index) => (
+                        <div key={index} className={`  relative rounded-2xl overflow-hidden ${image.className} `}>
+                            <Image src={image.src} fill alt={image.alt} className={"object-cover"} />
+                        </div>
+                    ))}
+                    <div className="  relative rounded-2xl overflow-hidden ">
+                        <Image src="/images/home/organizations-1.webp" fill alt="organizations-1" className="object-cover" />
                     </div>
-                    <div className="w-full h-[120px] sm:h-[160px] lg:h-[180px] relative rounded-2xl overflow-hidden">
-                        <Image src="/images/home/meeting.webp" fill alt="meeting" className="object-cover" />
+                    <div className=" relative rounded-2xl overflow-hidden">
+                        <Image src="/images/home/organizations-2.webp" fill alt="organizations-2" className="object-cover" />
                     </div>
-                    <div className="w-full h-[120px] sm:h-[160px] lg:h-[180px] relative rounded-2xl overflow-hidden">
-                        <Image src="/images/home/meeting.webp" fill alt="meeting" className="object-cover" />
+                    <div className=" relative rounded-2xl overflow-hidden">
+                        <Image src="/images/home/organizations-3.webp" fill alt="organizations-3" className="object-cover" />
                     </div>
                 </div>
 

@@ -12,10 +12,10 @@ export default function Dignitaries() {
             <div className="flex flex-col-reverse lg:flex-row gap-8 xl:gap-12 fp max-container">
                 <div className="w-full lg:w-[40%] relative">
                     <div className="relative w-[70%] h-[250px] mlg:h-[300px] sm:h-[400px] md:h-[500px] lg:h-full  rounded-2xl overflow-hidden  ">
-                        <Image src="/images/home/meeting.webp" alt="" fill className="object-cover" />
+                        <Image src="/images/home/dignitaries-1.webp" alt="" fill className="object-cover" />
                     </div>
                     <div className="absolute w-[50%] xl:w-[40%] h-[120px] mlg:h-[135px] sm:h-[180px] md:h-[225px] lg:h-[164px] border-10 border-white  rounded-2xl overflow-hidden right-0 top-1/2  -translate-y-1/2  ">
-                        <Image src="/images/home/meeting.webp" alt="" fill className="object-cover" />
+                        <Image src="/images/home/dignitaries-2.webp" alt="" fill className="object-cover" />
                     </div>
                 </div>
                 <div className="w-full lg:w-[60%] flex flex-col gap-5 lg:gap-10">
