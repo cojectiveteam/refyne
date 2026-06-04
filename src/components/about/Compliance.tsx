@@ -36,14 +36,14 @@ const cards = [
 const certifications = [
     {
         title: "RBI Compliant",
-        description: "Refyne is fully RBI compliant and holds ISO 27001 and SOC 2 certifications — the same standards expected of leading financial institutions worldwide.",
+        description: "Refyne operates in alignment with RBI guidelines and holds ISO 27001 and SOC 2 certifications, ensuring it meets both local and global standards of financial integrity.",
     },
     {
-        title: "Data Encrypted",
-        description: "All data is encrypted at rest and in transit. KYC processes follow RBI's mandatory guidelines. A dedicated Information Security team monitors operations continuously.",
+        title: "End-to-End Data Protection",
+        description: "Your data is encrypted at every stage, with KYC processes and monitoring systems designed to meet strict regulatory and security requirements.",
     },
     {
-        description: "This is one of the primary reasons I chose to work with Refyne. The compliance framework is not marketed. It is practised.",
+        description: "It reflects a level of discipline that sets it apart, and a key reason I chose to associate with Refyne.",
     }
 ]
 
@@ -74,9 +74,9 @@ export default function Compliance() {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 fp max-container">
                 <div className="flex flex-col gap-5 xl:gap-0 justify-between">
                     <h2 className="f-h3 xl:f-h2 text-secondary font-bold">Why Compliance Matters </h2>
-                    <div className="flex flex-col gap-3 text-text-dark">
-                        <p>In my years of working with governance and financial systems, I have seen what happens when compliance is treated as a formality.</p>
-                        <p>It is not a formality. It is a foundation.</p>
+                    <div className="flex flex-col gap-3 text-text-dark border-b border-[#DFDFDF] pb-5">
+                        <h6 className="text-base font-bold text-secondary">Security & Privacy</h6>
+                        <p>Refyne is the market leader in data security & privacy, with multiple compliance certifications to safeguard your data.</p>
                     </div>
                 </div>
                 <div className="p-5 mmd:p-6 mlg:p-8 bg-primary rounded-4xl w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-full sm:justify-self-center  ">
