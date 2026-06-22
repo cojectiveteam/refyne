@@ -18,6 +18,25 @@ const nav = [
     },
 ];
 
+const mobileNav = [
+    {
+        label: "Home",
+        href: "/",
+    },
+    {
+        label: "About",
+        href: "/about-us",
+    },
+    {
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+    },
+    {
+        label: "Terms of Use",
+        href: "/terms-of-use",
+    },
+];
+
 export default function Header() {
     const pathname = usePathname();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -106,7 +125,7 @@ export default function Header() {
 
                 <nav className="flex flex-col gap-6 mt-4">
                     <ul className="flex flex-col gap-4">
-                        {nav.map((item) => (
+                        {mobileNav.map((item) => (
                             <li key={item.href}>
                                 <Link
                                     href={item.href}
