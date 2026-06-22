@@ -19,31 +19,31 @@ const testimonial = [
         name: "Anitha",
         state: "Delhi",
         quote: "Refyne really helped me pay my child's school fees on time by allowing me to withdraw a salary advance instantly.",
-        image: "/images/about/suraj.webp"
+        image: "/images/about/anita.webp"
     },
     {
         name: "Neha",
         state: "Surat",
         quote: "Refyne has transformed the way I handle my finances. I can access my payout whenever I need it, whether it's for any emergencies or everyday expenses. The fast and smooth experience and 24/7 availability have made managing my finances much simpler.",
-        image: "/images/about/suraj.webp"
+        image: "/images/about/neha.webp"
     },
     {
         name: "Rahul",
         state: "Mumbai",
         quote: "Before Refyne, I was stuck with high-interest loans just to get by before the end of the month. Now, I can access my salary anytime I need it. Refyne has truly been a lifesaver, bringing me peace of mind and financial freedom. Thank you, Refyne!",
-        image: "/images/about/suraj.webp"
+        image: "/images/about/rahul.webp"
     },
     {
-        name: "Rahul",
-        state: "Mumbai",
-        quote: "Before Refyne, I was stuck with high-interest loans just to get by before the end of the month. Now, I can access my salary anytime I need it. Refyne has truly been a lifesaver, bringing me peace of mind and financial freedom. Thank you, Refyne!",
-        image: "/images/about/suraj.webp"
+        name: "Vikram",
+        state: "Bangalore",
+        quote: "As an HR leader, introducing Refyne has dramatically boosted employee morale and productivity. Resolving early payroll demands has removed a massive layer of stress for our staff.",
+        image: "/images/about/vikram.webp"
     },
     {
-        name: "Rahul",
-        state: "Mumbai",
-        quote: "Before Refyne, I was stuck with high-interest loans just to get by before the end of the month. Now, I can access my salary anytime I need it. Refyne has truly been a lifesaver, bringing me peace of mind and financial freedom. Thank you, Refyne!",
-        image: "/images/about/suraj.webp"
+        name: "Priya",
+        state: "Hyderabad",
+        quote: "The personalized budgeting and timing guidelines recommended by Amitabh Kaushik Consultancy helped me regain control of my salary and plan my monthly cashflows with ease.",
+        image: "/images/about/priya.webp"
     }
 ]
 
